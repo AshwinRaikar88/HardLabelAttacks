@@ -8,6 +8,9 @@ import nltk
 from nltk.corpus import wordnet
 from US_Encoder import US_Encoder
 
+import numpy as np
+from sklearn.metrics.pairwise import cosine_similarity
+
 class HQA_Algos:
     def __init__(self, model, DEBUG=False):
         self.DEBUG = DEBUG
@@ -21,9 +24,26 @@ class HQA_Algos:
         # Universal Sequence Encoder
         self.use_model = US_Encoder()
 
+        # Assuming you have downloaded the pre-trained counter-fitted vectors to 'counter_fitted_vectors.txt'
+        vector_file_path = 'counter-fitted-vectors.txt'
+        self.counter_fitted_embeddings = self.load_word_vectors(vector_file_path)
+
         if self.DEBUG:
             print("Debugging")
-        
+    
+    @staticmethod
+    def load_word_vectors(file_path):
+        """Loads word vectors from a text file."""
+        word_vectors = {}
+        with open(file_path, 'r', encoding='utf-8') as f:
+            for line in f:
+                line = line.strip().split()
+                if len(line) > 1:
+                    word = line[0]
+                    vector = np.array([float(val) for val in line[1:]])
+                    word_vectors[word] = vector
+        return word_vectors
+
     
     @staticmethod
     def get_synonyms(word):
@@ -44,6 +64,40 @@ class HQA_Algos:
             synonyms.add(lemm)
         return list(synonyms)
     
+    def get_synonyms_from_embeddings(self, word, embeddings, top_n=50):
+        """
+            Gets the top N synonyms for a given word using pre-trained word embeddings.
+
+            Args:
+                word (str): The word for which to find synonyms.
+                embeddings (dict): A dictionary where keys are words and values are their vector embeddings (NumPy arrays).
+                top_n (int): The maximum number of synonyms to return.
+
+            Returns:
+                list: A list of tuples, where each tuple contains a synonym and its cosine similarity score,
+                    sorted in descending order of similarity. Returns an empty list if the word is not found.
+        """
+        if word not in embeddings:
+            print(f"Warning: Word '{word}' not found in the embeddings vocabulary.")
+            return []
+
+        word_vector = embeddings[word].reshape(1, -1)  # Reshape for cosine_similarity
+
+        synonyms_with_scores = []
+        for vocab_word, vocab_vector in embeddings.items():
+            if vocab_word != word:  # Exclude the input word itself
+                vocab_vector = vocab_vector.reshape(1, -1)
+                similarity_score = cosine_similarity(word_vector, vocab_vector)[0][0]
+                synonyms_with_scores.append((vocab_word, similarity_score))
+
+        # Sort by similarity score in descending order
+        synonyms_with_scores.sort(key=lambda item: item[1], reverse=True)
+        # Extract only the synonyms (the first element of each tuple)
+        synonyms_list = [synonym for synonym, score in synonyms_with_scores[:top_n]]
+
+        # return synonyms_with_scores[:top_n]
+        return synonyms_list
+    
     def reset_params(self):
         self.query_count = 0
 
@@ -59,10 +113,11 @@ class HQA_Algos:
           return: modified adversarial example
           """
           for i, (word, pos) in enumerate(pos_tags):
-              if pos[:2] in target_pos:  # Match broad POS categories
-                  synonyms = self.get_synonyms(word)
-                  if synonyms:
-                      adversarial_example[i] = random.choice(synonyms)  # Random synonym replacement
+            if pos[:2] in target_pos:  # Match broad POS categories
+                #   synonyms = self.get_synonyms(word)
+                synonyms = self.get_synonyms_from_embeddings(word, self.counter_fitted_embeddings, top_n=50)
+                if synonyms:
+                    adversarial_example[i] = random.choice(synonyms)  # Random synonym replacement
           return ' '.join(adversarial_example)
 
     def generate_random_adversarial_example(self, x, orig_label):
