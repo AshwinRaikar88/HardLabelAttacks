@@ -12,7 +12,7 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
 class HQA_Algos:
-    def __init__(self, model, DEBUG=False):
+    def __init__(self, model, vector_file_path = '/content/counter-fitted-vectors.txt', DEBUG=False):
         self.DEBUG = DEBUG
         self.query_count = 0
         self.max_iter = 100
@@ -23,9 +23,7 @@ class HQA_Algos:
 
         # Universal Sequence Encoder
         self.use_model = US_Encoder()
-
-        # Assuming you have downloaded the pre-trained counter-fitted vectors to 'counter_fitted_vectors.txt'
-        vector_file_path = '/content/counter-fitted-vectors.txt'
+      
         self.counter_fitted_embeddings = self.load_word_vectors(vector_file_path)
 
         if self.DEBUG:
@@ -37,9 +35,7 @@ class HQA_Algos:
           Loads word vectors from a text file.
 
         """
-
-        if self.DEBUG:
-          print("[DEBUG]: Running load_word_vectors")
+        print("[DEBUG] Running load_word_vectors")
 
         word_vectors = {}
         with open(file_path, 'r', encoding='utf-8') as f:
@@ -61,8 +57,8 @@ class HQA_Algos:
 
         return: set of synonyms for the word
         """
-        if self.DEBUG:
-          print("[DEBUG]: Running Get_Synonyms")
+        
+        print("[DEBUG] Running Get_Synonyms")
 
         synonyms = set()
         for syn in wordnet.synsets(word):
@@ -87,7 +83,7 @@ class HQA_Algos:
                 list: A list of tuples, where each tuple contains a synonym and its cosine similarity score,
                     sorted in descending order of similarity. Returns an empty list if the word is not found.
         """
-        print("[DEBUG]: Running Get_Synonyms_from_Embeddings")
+        print("[DEBUG] Running Get_Synonyms_from_Embeddings")
 
         if word not in embeddings:
             # print(f"Warning: Word '{word}' not found in the embeddings vocabulary.")
@@ -126,7 +122,7 @@ class HQA_Algos:
           return: modified adversarial example
           """
           if self.DEBUG:
-            print("[DEBUG]: Running replace_synonyms")
+            print("[DEBUG] Running replace_synonyms")
 
           for i, (word, pos) in enumerate(pos_tags):
             if pos[:2] in target_pos:  # Match broad POS categories
@@ -145,8 +141,9 @@ class HQA_Algos:
 
         return: new generated adversarial example
         """
+        print("---"*15)
         print("Step1: Generating RNDM-ADV-EX")
-        print("---"*3)
+        print("---"*15)
         
         x = x.split()
         # Get Part-Of-Speech (POS) tags for words in x
@@ -196,8 +193,9 @@ class HQA_Algos:
 
         return: New adversarial example x_t after substitution
         """
+        print("---"*15)
         print("Step2: Substituting ORIG-WRDS")
-        print("---"*3)
+        print("---"*15)
         
         x = x.split()
         x_t = x_t.split()
