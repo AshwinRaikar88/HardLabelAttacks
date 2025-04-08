@@ -11,7 +11,7 @@ if __name__ == "__main__":
     DEBUG = True
     
     sentiment_analysis = SentimentAnalyzer()
-    hqa_attack = HQA_Algos(model=sentiment_analysis.model)
+    hqa_attack = HQA_Algos(model=sentiment_analysis.model, vector_file_path='/content/counter-fitted-vectors.txt', DEBUG=DEBUG)
     
     dataset = load_dataset("glue", "sst2")
 
