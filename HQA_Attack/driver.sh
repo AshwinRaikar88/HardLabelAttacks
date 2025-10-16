@@ -1,7 +1,7 @@
 #!/bin/bash
 SCRIPT_PATH="run_hqaV4_job.sh"
 DATASETS=("imdb" "ag_news" "yelp_polarity" "rotten_tomatoes")
-SYNONYM_METHOD="counter-fitted"
+SYNONYM_METHOD="wordnet"
 
 for DATASET_NAME in "${DATASETS[@]}"; do
     OUTPUT_FILE="debug/out_${DATASET_NAME}_${SYNONYM_METHOD}.out"

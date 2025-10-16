@@ -3,13 +3,14 @@ import argparse
 import sys
 from datasets import load_dataset
 
+from utils.token_loader import read_hf_token
 from utils.CSVUtils import export_result_to_csv
 from attack_algorithms.hqa_attack_v4 import HQAAttack
 
 AVAILABLE_DATASETS = ["imdb", "ag_news", "yelp_polarity", "rotten_tomatoes"]
 
 # HF_TOKEN = os.environ.get('HF_TOKEN')
-HF_TOKEN = "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"
+HF_TOKEN = read_hf_token("hf_token.txt")
 
 model_dict = {
     "imdb": ("text-classification", "textattack/distilbert-base-uncased-imdb", "imdb", "test"),
@@ -88,7 +89,7 @@ def main(dataset_name, synonym_method):
           result = attack.attack(sample['text'], max_iterations=3, verbose=True)
 
         results.append(result)
-        export_result_to_csv(result, filename=f"attack_{dataset_name}_{synonym_method}.csv")
+        export_result_to_csv(result, filename=f"output/attack_{dataset_name}_{synonym_method}.csv")
 
     print(f"\n{'='*70}")
     print("Attack completed")

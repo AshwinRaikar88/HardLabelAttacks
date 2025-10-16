@@ -108,7 +108,7 @@ class SynonymExtractor:
         sim_matrix = np.dot(embeddings_array, embeddings_array.T)
         return sim_matrix
     
-    def get_synonyms(self, word, top_k=10):
+    def get_synonyms(self, word, top_k=50):
         """Get top-k synonyms for a word"""
         if self.method == 'wordnet':
             return self._get_wordnet_synonyms(word, top_k)
@@ -117,7 +117,7 @@ class SynonymExtractor:
         else:
             raise ValueError(f"Unknown method: {self.method}")
     
-    def _get_wordnet_synonyms(self, word, top_k=10):
+    def _get_wordnet_synonyms(self, word, top_k=50):
         """Get synonyms using WordNet"""
         synonyms = set()
         for synset in wordnet.synsets(word.lower()):
@@ -128,7 +128,7 @@ class SynonymExtractor:
         
         return list(synonyms)[:top_k]
     
-    def _get_embedding_synonyms(self, word, top_k=10):
+    def _get_embedding_synonyms(self, word, top_k=50):
         """Get synonyms using embedding-based similarity"""
         word_lower = word.lower()
         
@@ -188,7 +188,7 @@ class HQAAttack:
         score = result['score']
         return label_idx, score
     
-    def get_synonyms(self, word, top_k=10):
+    def get_synonyms(self, word, top_k=50):
         """Get synonyms using the configured method"""
         return self.synonym_extractor.get_synonyms(word, top_k)
     
@@ -292,7 +292,7 @@ class HQAAttack:
         for pos in changed_positions:
             current_word = words[pos]
             
-            synonyms = self.get_synonyms(current_word, top_k=15)
+            synonyms = self.get_synonyms(current_word, top_k=50)
             
             if not synonyms:
                 continue
@@ -348,7 +348,7 @@ class HQAAttack:
             replaced_count = 0
             for idx in selected_important:
                 word, _ = important[idx]
-                synonyms = self.get_synonyms(word, top_k=15)
+                synonyms = self.get_synonyms(word, top_k=50)
                 
                 if synonyms:
                     word_positions = [i for i, w in enumerate(test_words) if w.lower() == word.lower()]
