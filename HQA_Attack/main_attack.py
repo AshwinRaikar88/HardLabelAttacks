@@ -25,14 +25,14 @@ except LookupError:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="HQA Attack")
-    parser.add_argument("--llm_model", type=str, default="mistral")
+    parser.add_argument("--llm_model", type=str, default="mistral", choices=['mistral, qwen3'])
     parser.add_argument("--model_path", type=str, required=True, help="Path to fine-tuned model")
     parser.add_argument("--dataset", type=str, default="rotten_tomatoes",
                         choices=['rotten_tomatoes', 'imdb', 'ag_news'])
     parser.add_argument("--synonym_method", type=str, default="wordnet",
                         choices=['wordnet', 'counter-fitted', 'glove'])
     parser.add_argument("--embedding_path", type=str, default=None)
-    parser.add_argument("--num_samples", type=int, default=100)
+    parser.add_argument("--num_samples", type=int, default=1000)
     parser.add_argument("--start_idx", type=int, default=None,
                         help="Start index for batch processing (0-indexed, inclusive)")
     parser.add_argument("--end_idx", type=int, default=None,
@@ -40,12 +40,10 @@ if __name__ == "__main__":
     parser.add_argument("--output_file", type=str, default="hqa_attack_results_logits.json")
     parser.add_argument("--checkpoint_file", type=str, default=None,
                         help="Checkpoint file for resume (default: <output_file>.checkpoint)")
-    parser.add_argument("--checkpoint_interval", type=int, default=10,
-                        help="Save checkpoint every N samples (default: 10)")
+    parser.add_argument("--checkpoint_interval", type=int, default=5, help="Save checkpoint every N samples (default: 5)")
     parser.add_argument("--max_iterations", type=int, default=5)
     parser.add_argument("--hf_token", type=str, default=None)
-    parser.add_argument("--resume", action='store_true',
-                        help="Resume from checkpoint if available")
+    parser.add_argument("--resume", action='store_true', help="Resume from checkpoint if available")
 
     args = parser.parse_args()
 
@@ -150,7 +148,6 @@ if __name__ == "__main__":
         dataset=args.dataset,
         synonym_method=args.synonym_method,
         embedding_path=args.embedding_path,
-        max_seq_length=max_seq_len,
         hf_token=args.hf_token
     )
 

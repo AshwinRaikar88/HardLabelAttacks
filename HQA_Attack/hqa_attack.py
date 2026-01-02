@@ -2,7 +2,6 @@ import torch
 import time
 from nltk.tokenize import word_tokenize
 from nltk import pos_tag
-from models.mistral_classsifier import MistralClassifier
 from utils.synonym_extractor import SynonymExtractor
 from utils.attack_utils import *
 
@@ -22,12 +21,22 @@ class HQAAttack:
         self.dataset = dataset
 
         if llm_model == "mistral":
+            from models.mistral_classsifier import MistralClassifier
             self.classifier = MistralClassifier(
                 model_path=model_path,
                 hf_token=hf_token,
                 device=device,
                 dataset=dataset
             )
+        elif llm_model == "qwen3":
+            from models.qwen3_classifier import Qwen3Classifier
+            self.classifier = Qwen3Classifier(
+                model_path=model_path,
+                hf_token=hf_token,
+                device=device,
+                dataset=dataset
+            )
+
         else:
             raise ValueError(f"Unknown LLM model: {llm_model}")
 
