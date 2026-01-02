@@ -1,5 +1,7 @@
 # Custom directories
 debug/
+HQA_Attack/bash_scripts/
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -176,3 +178,9 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 hf_token.txt
+/unsloth_compiled_cache
+/HQA_Attack/unsloth_compiled_cache
+/.idea
+/.vscode
+god_mode_token.txt
+github_creds.txt

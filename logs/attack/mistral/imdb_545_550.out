@@ -1,0 +1,168 @@
+🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+🦥 Unsloth Zoo will now patch everything to make training faster!
+
+Loading imdb dataset...
+Working with full test set (1000 samples)
+Batch range: [545, 550] (inclusive)
+Processing 6 samples from this batch
+Loading base model: unsloth/mistral-7b-instruct-v0.3
+Loading LoRA adapters from: /scratch/gilbreth/raikaa01/Projects/UnslothFinetuning/Mistral/mistral_imdb/final_model
+==((====))==  Unsloth 2025.11.3: Fast Mistral patching. Transformers: 4.56.2.
+   \\   /|    NVIDIA A100 80GB PCIe. Num GPUs = 1. Max memory: 79.254 GB. Platform: Linux.
+O^O/ \_/ \    Torch: 2.9.0+cu128. CUDA: 8.0. CUDA Toolkit: 12.8. Triton: 3.5.0
+\        /    Bfloat16 = TRUE. FA [Xformers = None. FA2 = False]
+ "-____-"     Free license: http://github.com/unslothai/unsloth
+Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!
+Mistral classifier loaded for imdb dataset!
+
+Loading counter-fitted embeddings from /scratch/gilbreth/raikaa01/Projects/HardLabelAttacks/HQA_Attack/weights/counter-fitted-vectors.txt...
+Loaded 65713 word vectors
+Pre-computing cosine similarity matrix...
+Similarity matrix ready
+Synonym extractor initialized with method: counter-fitted
+HQA Attack (Logits) initialized for Mistral on imdb
+Device: cuda, max_sequence length: 2048
+
+================================================================================
+Sample 545/550
+Elapsed: 0:00:37 | Avg/sample: 0.0s | ETA: 0:00:00
+================================================================================
+
+Original: Is there anything else on earth to be more enticing than to learn what expects our frail bodies afte...
+Label: negative (confidence: 8.062)
+Replacing 242 out of 303 important words (80.0%)
+After init: Is there dispassionate shoud on samara to be adolfo enticing than to moats what expects our frail st...
+Pred: positive (confidence: 8.312)
+Final: Is there anything else on earth to be more enticing than to learn what expects our frail bodies afte...
+Final pred: positive (confidence: 9.375)
+Queries used: 4852
+Attack time: 751.54s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 1 completed in 751.79s
+Success: True | Queries: 4852
+Current success rate: 1/1 (100.00%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 546/550
+Elapsed: 0:13:09 | Avg/sample: 751.8s | ETA: 1:02:38
+================================================================================
+
+Original: I wonder sometimes if maybe Meryl Streep has become so accepted as the most impressive, versatile ac...
+Label: positive (confidence: 9.500)
+Replacing 216 out of 271 important words (80.0%)
+After init: I wonder sometimes if maybe equine estimated intruded become so coming as the shaadi impressive, ver...
+Pred: negative (confidence: 7.531)
+Final: I wonder sometimes if maybe Meryl wrongdoing worsens become so accepted as the most impressive, vers...
+Final pred: negative (confidence: 9.562)
+Queries used: 4977
+Attack time: 730.18s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 2 completed in 730.32s
+Success: True | Queries: 4977
+Current success rate: 2/2 (100.00%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 547/550
+Elapsed: 0:25:19 | Avg/sample: 741.1s | ETA: 0:49:24
+================================================================================
+
+Original: and abysmal, over-the-top acting, you might enjoy this rubbish flick.Apparently atomic bombs makes l...
+Label: negative (confidence: 9.125)
+Replacing 66 out of 83 important words (80.0%)
+Failed to initialize adversarial example
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 3 completed in 184.01s
+Success: False | Queries: 1001
+Current success rate: 2/3 (66.67%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 548/550
+Elapsed: 0:28:23 | Avg/sample: 555.4s | ETA: 0:27:46
+================================================================================
+
+Original: Years ago, I didn't love and respect the films of Jimmy Cagney nearly as much as I do now. I noticed...
+Label: positive (confidence: 8.375)
+Replacing 167 out of 209 important words (80.0%)
+After init: Years ago, I didn't stockton and fukuoka the stéphane of sniffle aviators pensione as jiro as I do n...
+Pred: negative (confidence: 7.438)
+Final: Years ago, I didn't love and respect the alvaro of Jimmy Cagney nearly as much as I do now. I notice...
+Final pred: negative (confidence: 10.312)
+Queries used: 3593
+Attack time: 395.32s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 4 completed in 395.43s
+Success: True | Queries: 3593
+Current success rate: 3/4 (75.00%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 549/550
+Elapsed: 0:34:59 | Avg/sample: 515.4s | ETA: 0:17:10
+================================================================================
+
+Original: Paul Bettany did a great role as the tortured father whose favorite little girl dies tragically of d...
+Label: negative (confidence: 8.938)
+Replacing 75 out of 94 important words (80.0%)
+After init: Paul Bettany anesthetist a dispatcher thirsting as the threatened zodiac whose styling samar remote ...
+Pred: positive (confidence: 8.062)
+Final: Paul Bettany did a great role as the tortured father whose favorite little girl dies tragically of d...
+Final pred: positive (confidence: 9.812)
+Queries used: 1544
+Attack time: 145.04s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 5 completed in 145.14s
+Success: True | Queries: 1544
+Current success rate: 4/5 (80.00%)
+────────────────────────────────────────────────────────────────────────────────
+
+[CHECKPOINT SAVED] Progress: 550/6 samples
+
+================================================================================
+Sample 550/550
+Elapsed: 0:37:24 | Avg/sample: 441.3s | ETA: 0:07:21
+================================================================================
+
+Original: Early 1950s Sci-Fi directed by Lesley Selander. Special effects of course are very primitive, but pr...
+Label: positive (confidence: 10.375)
+Replacing 80 out of 100 important words (80.0%)
+After init: detonation 1950s Sci-Fi maxi by matricide Selander. Special effects of nitin gidday hira primitive, ...
+Pred: negative (confidence: 7.750)
+Final: Early 1950s Sci-Fi directed by Lesley Selander. Special effects of course are very primitive, but pr...
+Final pred: negative (confidence: 7.469)
+Queries used: 1107
+Attack time: 102.76s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 6 completed in 102.86s
+Success: True | Queries: 1107
+Current success rate: 5/6 (83.33%)
+────────────────────────────────────────────────────────────────────────────────
+
+[CHECKPOINT SAVED] Progress: 551/6 samples
+
+================================================================================
+ATTACK CAMPAIGN COMPLETED
+================================================================================
+Dataset: imdb
+Method: Logits
+Total samples: 6
+Successful attacks: 5
+Success rate: 83.33%
+================================================================================
+TIMING STATISTICS
+================================================================================
+Total time: 0:39:07
+Average time per attack: 384.92s
+Fastest attack: 102.86s
+Slowest attack: 751.79s
+================================================================================
+Results saved to: output/llm_attacks/mistral_imdb_logits_attack_545_550_545_to_550.json
+Checkpoint file removed: output/llm_attacks/checkpoints/mistral_imdb_logits_attack_545_550.checkpoint.json

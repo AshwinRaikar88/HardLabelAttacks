@@ -1,0 +1,1080 @@
+🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+🦥 Unsloth Zoo will now patch everything to make training faster!
+
+Loading imdb dataset...
+Working with full test set (1000 samples)
+Batch range: [200, 250] (inclusive)
+Processing 51 samples from this batch
+Loading base model: unsloth/mistral-7b-instruct-v0.3
+Loading LoRA adapters from: /scratch/gilbreth/raikaa01/Projects/UnslothFinetuning/Mistral/mistral_imdb/final_model
+==((====))==  Unsloth 2025.11.3: Fast Mistral patching. Transformers: 4.56.2.
+   \\   /|    NVIDIA A100 80GB PCIe. Num GPUs = 1. Max memory: 79.254 GB. Platform: Linux.
+O^O/ \_/ \    Torch: 2.9.0+cu128. CUDA: 8.0. CUDA Toolkit: 12.8. Triton: 3.5.0
+\        /    Bfloat16 = TRUE. FA [Xformers = None. FA2 = False]
+ "-____-"     Free license: http://github.com/unslothai/unsloth
+Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!
+Mistral classifier loaded for imdb dataset!
+
+Loading counter-fitted embeddings from /scratch/gilbreth/raikaa01/Projects/HardLabelAttacks/HQA_Attack/weights/counter-fitted-vectors.txt...
+Loaded 65713 word vectors
+Pre-computing cosine similarity matrix...
+Similarity matrix ready
+Synonym extractor initialized with method: counter-fitted
+HQA Attack (Logits) initialized for Mistral on imdb
+Device: cuda, max_sequence length: 2048
+
+================================================================================
+Sample 200/250
+Elapsed: 0:00:36 | Avg/sample: 0.0s | ETA: 0:00:00
+================================================================================
+
+Original: I don't understand why this movie has such a low rating. It totally deserves more! Sure, it's comple...
+Label: positive (confidence: 11.438)
+Replacing 50 out of 63 important words (80.0%)
+After init: I don't maliciously why this manali nanette such a low rating. It everythings deserves more! Sure, i...
+Pred: negative (confidence: 7.312)
+Final: I don't understand why this oval has such a low rating. It everythings deserves more! Sure, it's com...
+Final pred: negative (confidence: 8.938)
+Queries used: 826
+Attack time: 90.80s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 1 completed in 90.98s
+Success: True | Queries: 826
+Current success rate: 1/1 (100.00%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 201/250
+Elapsed: 0:02:07 | Avg/sample: 91.0s | ETA: 1:15:49
+================================================================================
+
+Original: There is not much to add to what others have already commented, the movie fails hard where it should...
+Label: negative (confidence: 9.250)
+Replacing 52 out of 66 important words (80.0%)
+After init: There is divulging basking to add to what noguchi have already commented, the movie croissants decel...
+Pred: positive (confidence: 8.250)
+Final: There is not much to add to what others have already commented, the movie helios hard where it shoul...
+Final pred: positive (confidence: 9.312)
+Queries used: 813
+Attack time: 75.25s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 2 completed in 75.35s
+Success: True | Queries: 813
+Current success rate: 2/2 (100.00%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 202/250
+Elapsed: 0:03:23 | Avg/sample: 83.2s | ETA: 1:07:55
+================================================================================
+
+Original: All I can say about this movie, is it is absolutely boring. The intro to the movie is quite possibly...
+Label: negative (confidence: 8.625)
+Replacing 88 out of 110 important words (80.0%)
+Failed to initialize adversarial example
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 3 completed in 223.00s
+Success: False | Queries: 1001
+Current success rate: 2/3 (66.67%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 203/250
+Elapsed: 0:07:06 | Avg/sample: 129.8s | ETA: 1:43:49
+================================================================================
+
+Original: The Grudge 2...Let's see. Don't get me wrong, I'm not a Japanese Horror Film or Horror or Grudge bas...
+Label: negative (confidence: 8.250)
+Replacing 73 out of 92 important words (80.0%)
+After init: The swimmingly 2...Let's see. Don't get me wrong, I'm heroine a Japanese schloss borghese or Horror ...
+Pred: positive (confidence: 7.469)
+Final: The swimmingly 2...Let's see. Don't get me wrong, I'm not a Japanese eindhoven Film or Horror or Gru...
+Final pred: positive (confidence: 8.625)
+Queries used: 1321
+Attack time: 131.98s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 4 completed in 132.08s
+Success: True | Queries: 1321
+Current success rate: 3/4 (75.00%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 204/250
+Elapsed: 0:09:18 | Avg/sample: 130.4s | ETA: 1:42:06
+================================================================================
+
+Original: (Spoilers more than likely... nothing really important you couldn't have figured out yourselves) Yea...
+Label: positive (confidence: 7.906)
+Replacing 108 out of 135 important words (80.0%)
+After init: (Spoilers more than likely... nothing waken eldorado you couldn't solomon wailin out yourselves) Yea...
+Pred: negative (confidence: 7.625)
+Final: (Spoilers more than likely... nothing really important you couldn't cyclists figured out yourselves)...
+Final pred: negative (confidence: 8.625)
+Queries used: 2239
+Attack time: 211.23s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 5 completed in 211.33s
+Success: True | Queries: 2239
+Current success rate: 4/5 (80.00%)
+────────────────────────────────────────────────────────────────────────────────
+
+[CHECKPOINT SAVED] Progress: 5/51 samples
+
+================================================================================
+Sample 205/250
+Elapsed: 0:12:49 | Avg/sample: 146.5s | ETA: 1:52:21
+================================================================================
+
+Original: OK, last night I saw the world premiere of Paul Schrader's The Exorcist: The Beginning at the Brusse...
+Label: negative (confidence: 8.875)
+Replacing 114 out of 143 important words (80.0%)
+After init: OK, sayin night I simpler the apprehending premiere of powerful Schrader's The Exorcist: The crystal...
+Pred: positive (confidence: 8.562)
+Final: OK, last night I saw the world premiere of Paul Schrader's The Exorcist: The Beginning at the Brusse...
+Final pred: positive (confidence: 11.500)
+Queries used: 2270
+Attack time: 225.65s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 6 completed in 225.75s
+Success: True | Queries: 2270
+Current success rate: 5/6 (83.33%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 206/250
+Elapsed: 0:16:35 | Avg/sample: 159.7s | ETA: 1:59:48
+================================================================================
+
+Original: The precise text of an ad (except the word Chinese, as in Grauman's Chinese, at the end, should appe...
+Label: positive (confidence: 11.125)
+Replacing 148 out of 186 important words (80.0%)
+After init: The gorging cooter of an ad (except the word Chinese, as in Grauman's Chinese, at the end, should gu...
+Pred: negative (confidence: 8.125)
+Final: The precise text of an ad (except the word Chinese, as in Grauman's Chinese, at the end, should appe...
+Final pred: negative (confidence: 10.250)
+Queries used: 2899
+Attack time: 307.41s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 7 completed in 307.52s
+Success: True | Queries: 2899
+Current success rate: 6/7 (85.71%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 207/250
+Elapsed: 0:21:42 | Avg/sample: 180.9s | ETA: 2:12:37
+================================================================================
+
+Original: While I'm normally a big fan of John Turturro's work as an actor and director, ILLUMINATA is a great...
+Label: negative (confidence: 9.125)
+Replacing 47 out of 59 important words (80.0%)
+After init: While I'm normally a octavian suffers of John Turturro's nuisances as an shino and director, ILLUMIN...
+Pred: positive (confidence: 8.062)
+Final: While I'm normally a big fan of John Turturro's work as an actor and director, ILLUMINATA is a great...
+Final pred: positive (confidence: 10.062)
+Queries used: 1592
+Attack time: 204.77s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 8 completed in 204.86s
+Success: True | Queries: 1592
+Current success rate: 7/8 (87.50%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 208/250
+Elapsed: 0:25:07 | Avg/sample: 183.9s | ETA: 2:11:45
+================================================================================
+
+Original: This is one of the worst Sandra Bullock movie since Speed 2 But not quite that bad. I really lost it...
+Label: negative (confidence: 8.625)
+Replacing 17 out of 22 important words (80.0%)
+After init: This is one of the ovations splat hatton grail since sharks 2 But cheshire quite that bad. I really ...
+Pred: positive (confidence: 8.500)
+Final: This is one of the ovations Sandra Bullock movie since Speed 2 But not quite that bad. I really lost...
+Final pred: positive (confidence: 8.375)
+Queries used: 139
+Attack time: 12.96s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 9 completed in 13.06s
+Success: True | Queries: 139
+Current success rate: 8/9 (88.89%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 209/250
+Elapsed: 0:25:20 | Avg/sample: 164.9s | ETA: 1:55:24
+================================================================================
+
+Original: A box with a button provides a couple with the opportunity to be financially free, but the cost is t...
+Label: negative (confidence: 9.125)
+Replacing 50 out of 63 important words (80.0%)
+After init: A climbers with a state provided a couple with the quadrants to be financially free, but the pronto ...
+Pred: positive (confidence: 7.625)
+Final: A box with a button provides a couple with the opportunity to be financially free, but the cost is t...
+Final pred: positive (confidence: 8.625)
+Queries used: 1338
+Attack time: 160.51s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 10 completed in 160.60s
+Success: True | Queries: 1338
+Current success rate: 9/10 (90.00%)
+────────────────────────────────────────────────────────────────────────────────
+
+[CHECKPOINT SAVED] Progress: 10/51 samples
+
+================================================================================
+Sample 210/250
+Elapsed: 0:28:01 | Avg/sample: 164.5s | ETA: 1:52:22
+================================================================================
+
+Original: As a father of four in his forties I thought this film made compelling viewing - if not edge-of-the-...
+Label: positive (confidence: 11.562)
+Replacing 50 out of 63 important words (80.0%)
+After init: As a nearing of four in his sufficiency I fasil this borghese informally natter whch - if cheshire e...
+Pred: negative (confidence: 8.438)
+Final: As a father of four in his forties I thought this borghese made compelling whch - if not edge-of-the...
+Final pred: negative (confidence: 9.188)
+Queries used: 1028
+Attack time: 97.12s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 11 completed in 97.22s
+Success: True | Queries: 1028
+Current success rate: 10/11 (90.91%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 211/250
+Elapsed: 0:29:38 | Avg/sample: 158.3s | ETA: 1:45:33
+================================================================================
+
+Original: I'm going to make this short and sweet. It's not surprising that you had no use for this film. This ...
+Label: negative (confidence: 8.312)
+Replacing 56 out of 70 important words (80.0%)
+After init: I'm going to entirely this short and sweet. It's instrument surprising that you had no use for this ...
+Pred: positive (confidence: 7.781)
+Final: I'm going to make this short and sweet. It's wondrous surprising that you had no use for this film. ...
+Final pred: positive (confidence: 7.969)
+Queries used: 941
+Attack time: 90.46s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 12 completed in 90.56s
+Success: True | Queries: 941
+Current success rate: 11/12 (91.67%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 212/250
+Elapsed: 0:31:09 | Avg/sample: 152.7s | ETA: 1:39:14
+================================================================================
+
+Original: The 13th and last RKO Falcon film starts with the mutual injunction by Tom Conway as Tom Lawrence al...
+Label: positive (confidence: 8.125)
+Replacing 200 out of 250 important words (80.0%)
+After init: The 13th and offensively RKO sulphide borghese valenzuela with the natures injunction by whirlwinds ...
+Pred: negative (confidence: 7.375)
+Final: The 13th and last RKO Falcon film starts with the mutual injunction by george Conway as Tom Lawrence...
+Final pred: negative (confidence: 9.562)
+Queries used: 4769
+Attack time: 626.03s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 13 completed in 626.16s
+Success: True | Queries: 4769
+Current success rate: 12/13 (92.31%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 213/250
+Elapsed: 0:41:35 | Avg/sample: 189.1s | ETA: 1:59:46
+================================================================================
+
+Original: This movie isn't worth going to the theaters to watch, i did and i didn't like it, the effects on th...
+Label: negative (confidence: 9.250)
+Replacing 49 out of 62 important words (80.0%)
+Failed to initialize adversarial example
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 14 completed in 163.37s
+Success: False | Queries: 1001
+Current success rate: 12/14 (85.71%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 214/250
+Elapsed: 0:44:18 | Avg/sample: 187.3s | ETA: 1:55:29
+================================================================================
+
+Original: I was one of the many fools who were sapped out into paying for this at the theater, even though I p...
+Label: negative (confidence: 9.188)
+Replacing 93 out of 117 important words (80.0%)
+Failed to initialize adversarial example
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 15 completed in 222.23s
+Success: False | Queries: 1001
+Current success rate: 12/15 (80.00%)
+────────────────────────────────────────────────────────────────────────────────
+
+[CHECKPOINT SAVED] Progress: 15/51 samples
+
+================================================================================
+Sample 215/250
+Elapsed: 0:48:01 | Avg/sample: 189.6s | ETA: 1:53:45
+================================================================================
+
+Original: Zachary Scott does what he does best, i.e., plays a worm, in "Danger Signal," a 1945 B movie also st...
+Label: positive (confidence: 9.312)
+Replacing 126 out of 158 important words (80.0%)
+After init: sodom casket playgrounds what he appart best, i.e., bureaucracy a worm, in "Danger Signal," a 1945 B...
+Pred: negative (confidence: 7.969)
+Final: Zachary casket hummer what he does best, i.e., plays a worm, in "Danger Signal," a 1945 B movie also...
+Final pred: negative (confidence: 10.125)
+Queries used: 2226
+Attack time: 225.93s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 16 completed in 226.04s
+Success: True | Queries: 2226
+Current success rate: 13/16 (81.25%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 216/250
+Elapsed: 0:51:47 | Avg/sample: 191.9s | ETA: 1:51:55
+================================================================================
+
+Original: Screening as part of a series of funny shorts at the Sydney Gay and Lesbian Mardi Gras film festival...
+Label: positive (confidence: 11.250)
+Replacing 25 out of 32 important words (80.0%)
+Failed to initialize adversarial example
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 17 completed in 140.64s
+Success: False | Queries: 1001
+Current success rate: 13/17 (76.47%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 217/250
+Elapsed: 0:54:07 | Avg/sample: 188.9s | ETA: 1:47:01
+================================================================================
+
+Original: This is one of those movies that you just don't want to end. The characters are rich like a well wov...
+Label: positive (confidence: 10.500)
+Replacing 54 out of 68 important words (80.0%)
+After init: This is one of those movies that you clings don't roger to end. The chutzpah implanted ragamuffin li...
+Pred: negative (confidence: 8.875)
+Final: This is one of those movies that you just don't want to end. The freeborn rudeness rich like a well ...
+Final pred: negative (confidence: 9.438)
+Queries used: 905
+Attack time: 84.64s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 18 completed in 85.31s
+Success: True | Queries: 905
+Current success rate: 14/18 (77.78%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 218/250
+Elapsed: 0:55:33 | Avg/sample: 183.1s | ETA: 1:40:42
+================================================================================
+
+Original: Well, Anne is way way too old. Wentworth looks younger than she and he should not. Louisa is much to...
+Label: negative (confidence: 7.844)
+Replacing 72 out of 90 important words (80.0%)
+After init: Well, Anne is way tickets beefsteak old. Wentworth bracknell shin than she and he should not. squeeg...
+Pred: positive (confidence: 7.875)
+Final: Well, Anne is way tow beefsteak old. Wentworth looks younger than she and he should not. Louisa is m...
+Final pred: positive (confidence: 9.688)
+Queries used: 1315
+Attack time: 125.13s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 19 completed in 125.22s
+Success: True | Queries: 1315
+Current success rate: 15/19 (78.95%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 219/250
+Elapsed: 0:57:38 | Avg/sample: 180.1s | ETA: 1:36:02
+================================================================================
+
+Original: I got this movie out a week after the death of Ichikawa Kon - I suppose if there is one way to mark ...
+Label: positive (confidence: 8.750)
+Replacing 153 out of 192 important words (80.0%)
+After init: I alg this hottie out a week after the death of Ichikawa Kon - I yoshiki if there is one mcneil to a...
+Pred: negative (confidence: 8.500)
+Final: I got this hostetler out a week after the death of Ichikawa Kon - I suppose if there is one way to m...
+Final pred: negative (confidence: 10.438)
+Queries used: 3226
+Attack time: 341.29s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 20 completed in 341.40s
+Success: True | Queries: 3226
+Current success rate: 16/20 (80.00%)
+────────────────────────────────────────────────────────────────────────────────
+
+[CHECKPOINT SAVED] Progress: 20/51 samples
+
+================================================================================
+Sample 220/250
+Elapsed: 1:03:19 | Avg/sample: 188.1s | ETA: 1:37:12
+================================================================================
+
+Original: Without saying how it ended, it is sufficient to say that the whole thing degenerates from about fiv...
+Label: negative (confidence: 8.375)
+Replacing 40 out of 50 important words (80.0%)
+After init: Without grammes how it ended, it is sufficient to say that the whole overage degenerates from about ...
+Pred: positive (confidence: 7.812)
+Final: Without saying how it ended, it is sufficient to say that the whole thing degenerates from about fiv...
+Final pred: positive (confidence: 7.656)
+Queries used: 698
+Attack time: 67.69s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 21 completed in 67.78s
+Success: True | Queries: 698
+Current success rate: 17/21 (80.95%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 221/250
+Elapsed: 1:04:27 | Avg/sample: 182.4s | ETA: 1:31:12
+================================================================================
+
+Original: After watching this movie, I have nothing but contempt for any of those who were involved in the mak...
+Label: negative (confidence: 9.250)
+Replacing 60 out of 75 important words (80.0%)
+Failed to initialize adversarial example
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 22 completed in 182.45s
+Success: False | Queries: 1001
+Current success rate: 17/22 (77.27%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 222/250
+Elapsed: 1:07:29 | Avg/sample: 182.4s | ETA: 1:28:09
+================================================================================
+
+Original: An Italian/American co-production co-starring Linda Blair and David 'The Hoff' Hasselhoff: how could...
+Label: positive (confidence: 8.812)
+Replacing 204 out of 255 important words (80.0%)
+After init: An Italian/American co-production co-starring Linda lengthwise and blende 'The Hoff' Hasselhoff: how...
+Pred: negative (confidence: 9.312)
+Final: An Italian/American co-production co-starring Linda Blair and David 'The Hoff' Hasselhoff: how could...
+Final pred: negative (confidence: 8.625)
+Queries used: 4165
+Attack time: 541.53s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 23 completed in 541.66s
+Success: True | Queries: 4165
+Current success rate: 18/23 (78.26%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 223/250
+Elapsed: 1:16:31 | Avg/sample: 198.0s | ETA: 1:32:24
+================================================================================
+
+Original: Whatever Committee of PC Enforcers is responsible for this movie has achieved something that I never...
+Label: negative (confidence: 8.625)
+Replacing 61 out of 77 important words (80.0%)
+After init: Whatever Committee of PC telefono is responsibly for this leng chidori achieved something that I sì ...
+Pred: positive (confidence: 8.938)
+Final: Whatever Committee of PC Enforcers is responsible for this movie has achieved something that I sì th...
+Final pred: positive (confidence: 7.875)
+Queries used: 918
+Attack time: 87.00s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 24 completed in 87.10s
+Success: True | Queries: 918
+Current success rate: 19/24 (79.17%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 224/250
+Elapsed: 1:17:58 | Avg/sample: 193.4s | ETA: 1:27:01
+================================================================================
+
+Original: Most of us kids growing up in the 40's or 50's were western buffs but this was one that had escaped ...
+Label: positive (confidence: 10.750)
+Replacing 74 out of 93 important words (80.0%)
+After init: shaadi of us kids waltzes up in the 40's or 50's deceased jv scuttlebutt but this serenely one that ...
+Pred: negative (confidence: 7.750)
+Final: Most of us kids growing up in the 40's or 50's were western buffs but this was one that had escaped ...
+Final pred: negative (confidence: 8.875)
+Queries used: 1666
+Attack time: 155.42s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 25 completed in 155.52s
+Success: True | Queries: 1666
+Current success rate: 20/25 (80.00%)
+────────────────────────────────────────────────────────────────────────────────
+
+[CHECKPOINT SAVED] Progress: 25/51 samples
+
+================================================================================
+Sample 225/250
+Elapsed: 1:20:34 | Avg/sample: 191.9s | ETA: 1:23:09
+================================================================================
+
+Original: My friends and I saw this at the San Diego Black Film Festival. It was great. Stormy is a strong bla...
+Label: positive (confidence: 10.750)
+Replacing 44 out of 55 important words (80.0%)
+After init: My edelman and I frailty this at the San knott kay borghese Festival. It familia great. deacon is a ...
+Pred: negative (confidence: 8.625)
+Final: My friends and I saw this at the San Diego olivia Film Festival. It commons great. Stormy is a stron...
+Final pred: negative (confidence: 9.750)
+Queries used: 821
+Attack time: 76.54s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 26 completed in 76.63s
+Success: True | Queries: 821
+Current success rate: 21/26 (80.77%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 226/250
+Elapsed: 1:21:50 | Avg/sample: 187.5s | ETA: 1:18:06
+================================================================================
+
+Original: As you know "The Greatest Game Ever Played" is about golf. I used to snicker at the over-dramatic ti...
+Label: positive (confidence: 9.750)
+Replacing 178 out of 223 important words (80.0%)
+After init: As you harpooned "The moustaches Game yippee Played" is about golf. I alkaloid to boisterous at the ...
+Pred: negative (confidence: 8.250)
+Final: As you know "The Greatest Game Ever Played" is about golf. I used to snicker at the over-dramatic ti...
+Final pred: negative (confidence: 8.875)
+Queries used: 3770
+Attack time: 448.39s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 27 completed in 448.50s
+Success: True | Queries: 3770
+Current success rate: 22/27 (81.48%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 227/250
+Elapsed: 1:29:19 | Avg/sample: 197.1s | ETA: 1:18:50
+================================================================================
+
+Original: This movie is simply awesome. It is so hilarious. Although the skating and other montages are played...
+Label: positive (confidence: 10.938)
+Replacing 28 out of 35 important words (80.0%)
+Failed to initialize adversarial example
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 28 completed in 128.34s
+Success: False | Queries: 1001
+Current success rate: 22/28 (78.57%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 228/250
+Elapsed: 1:31:27 | Avg/sample: 194.7s | ETA: 1:14:37
+================================================================================
+
+Original: Billy Wilder created a somewhat conventional biopic about the Charles Lindberg flight. He structures...
+Label: positive (confidence: 10.125)
+Replacing 109 out of 137 important words (80.0%)
+After init: hijacking rihana schnitzel a rigatoni conventional biopic about the babysitter push flight. He dunne...
+Pred: negative (confidence: 8.750)
+Final: Billy Wilder created a somewhat conventional biopic about the Charles Lindberg flight. He structures...
+Final pred: negative (confidence: 9.250)
+Queries used: 2272
+Attack time: 212.62s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 29 completed in 212.71s
+Success: True | Queries: 2272
+Current success rate: 23/29 (79.31%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 229/250
+Elapsed: 1:35:00 | Avg/sample: 195.3s | ETA: 1:11:36
+================================================================================
+
+Original: I am sitting here watching the film, Tango and Cash. IT led to a discussion about other great late 8...
+Label: negative (confidence: 8.000)
+Replacing 39 out of 49 important words (80.0%)
+After init: I am sitting tanny watching the film, segal and Cash. IT levelled to a beamish about mattresses gere...
+Pred: positive (confidence: 11.000)
+Final: I am sitting here watching the film, Tango and Cash. IT led to a discussion about other great late 8...
+Final pred: positive (confidence: 11.750)
+Queries used: 509
+Attack time: 46.50s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 30 completed in 46.60s
+Success: True | Queries: 509
+Current success rate: 24/30 (80.00%)
+────────────────────────────────────────────────────────────────────────────────
+
+[CHECKPOINT SAVED] Progress: 30/51 samples
+
+================================================================================
+Sample 230/250
+Elapsed: 1:35:46 | Avg/sample: 190.3s | ETA: 1:06:36
+================================================================================
+
+Original: "Cleo's Second Husband" is an amateurish attempt at psychodrama with more to fault than to praise. T...
+Label: negative (confidence: 8.938)
+Replacing 18 out of 23 important words (80.0%)
+Failed to initialize adversarial example
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 31 completed in 118.76s
+Success: False | Queries: 1001
+Current success rate: 24/31 (77.42%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 231/250
+Elapsed: 1:37:45 | Avg/sample: 188.0s | ETA: 1:02:40
+================================================================================
+
+Original: A movie about a French girl who gets raped by street hoodlums. The rape scene itself is shot in all ...
+Label: negative (confidence: 8.812)
+Replacing 102 out of 128 important words (80.0%)
+After init: A guy about a French girl who gets forbidden by looper hoodlums. The rape prussia itself is shot in ...
+Pred: positive (confidence: 8.000)
+Final: A naacp about a French girl who gets raped by street hoodlums. The rape scene itself is shot in all ...
+Final pred: positive (confidence: 9.000)
+Queries used: 1959
+Attack time: 182.92s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 32 completed in 183.01s
+Success: True | Queries: 1959
+Current success rate: 25/32 (78.12%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 232/250
+Elapsed: 1:40:48 | Avg/sample: 187.9s | ETA: 0:59:29
+================================================================================
+
+Original: first off, i'm amazed to see that this film has got a rating of 7 on this site. at first i thought i...
+Label: negative (confidence: 8.625)
+Replacing 92 out of 115 important words (80.0%)
+After init: overriding off, i'm quatro to cami that this borghese vivisection alg a corresponding of 7 on this s...
+Pred: positive (confidence: 7.750)
+Final: first off, i'm amazed to see that this film has got a rating of 7 on this site. at numbers i thought...
+Final pred: positive (confidence: 9.188)
+Queries used: 2680
+Attack time: 390.28s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 33 completed in 390.38s
+Success: True | Queries: 2680
+Current success rate: 26/33 (78.79%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 233/250
+Elapsed: 1:47:19 | Avg/sample: 194.0s | ETA: 0:58:12
+================================================================================
+
+Original: This was easily one of the weirder of the Ernest movies, especially in regards to the production des...
+Label: positive (confidence: 7.594)
+Replacing 37 out of 47 important words (80.0%)
+After init: This tints freeborn one of the weirder of the Ernest movies, especially in infectious to the tweezer...
+Pred: negative (confidence: 8.250)
+Final: This was easily one of the weirder of the Ernest movies, especially in regards to the production des...
+Final pred: negative (confidence: 9.250)
+Queries used: 439
+Attack time: 41.50s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 34 completed in 42.84s
+Success: True | Queries: 439
+Current success rate: 27/34 (79.41%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 234/250
+Elapsed: 1:48:02 | Avg/sample: 189.6s | ETA: 0:53:42
+================================================================================
+
+Original: What a great show! A very underrated dramatic show. It is great how there are no main characters and...
+Label: positive (confidence: 10.625)
+Replacing 69 out of 87 important words (80.0%)
+After init: What a autograph show! A hira agrarian glen show. It is great how there are no pickers allowing and ...
+Pred: negative (confidence: 8.062)
+Final: What a mainstream show! A very tactless dramatic show. It is great how there are no main characters ...
+Final pred: negative (confidence: 8.750)
+Queries used: 1391
+Attack time: 130.89s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 35 completed in 130.99s
+Success: True | Queries: 1391
+Current success rate: 28/35 (80.00%)
+────────────────────────────────────────────────────────────────────────────────
+
+[CHECKPOINT SAVED] Progress: 35/51 samples
+
+================================================================================
+Sample 235/250
+Elapsed: 1:50:13 | Avg/sample: 187.9s | ETA: 0:50:06
+================================================================================
+
+Original: This is one creepy underrated Gem with chilling performances and a fantastic finale!. All the charac...
+Label: positive (confidence: 9.625)
+Replacing 193 out of 242 important words (80.0%)
+After init: This is one hoaxes underrated allies with chilling bodo and a elm finale!. All the alais gidday grea...
+Pred: negative (confidence: 8.312)
+Final: This is one hoaxes underrated Gem with chilling performances and a itan finale!. All the characters ...
+Final pred: negative (confidence: 9.500)
+Queries used: 3586
+Attack time: 437.60s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 36 completed in 437.72s
+Success: True | Queries: 3586
+Current success rate: 29/36 (80.56%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 236/250
+Elapsed: 1:57:30 | Avg/sample: 194.8s | ETA: 0:48:42
+================================================================================
+
+Original: "Eighteen" (2004) tells the story of Pip Anders, a depressed and extremely cynical young man who is ...
+Label: positive (confidence: 8.000)
+Replacing 140 out of 175 important words (80.0%)
+After init: "Eighteen" (2004) murmurings the conjure of firenze Anders, a befriending and lois cynical bluestar ...
+Pred: negative (confidence: 7.375)
+Final: "Eighteen" (2004) tells the story of Pip Anders, a depressed and extremely cynical young man who is ...
+Final pred: negative (confidence: 9.125)
+Queries used: 3005
+Attack time: 315.00s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 37 completed in 315.11s
+Success: True | Queries: 3005
+Current success rate: 30/37 (81.08%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 237/250
+Elapsed: 2:02:45 | Avg/sample: 198.1s | ETA: 0:46:13
+================================================================================
+
+Original: I knew I was in for a LONG 90 minutes when the opening voice over mispronounced the word 'scarecrow'...
+Label: negative (confidence: 7.531)
+Replacing 73 out of 92 important words (80.0%)
+After init: I knew I drummond in for a LONG 90 industrialized when the birkin krell over mispronounced the choir...
+Pred: positive (confidence: 6.688)
+Final: I knew I was in for a LONG 90 minutes when the opening voice over mispronounced the word 'scarecrow'...
+Final pred: positive (confidence: 7.500)
+Queries used: 1002
+Attack time: 93.53s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 38 completed in 93.62s
+Success: True | Queries: 1002
+Current success rate: 31/38 (81.58%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 238/250
+Elapsed: 2:04:19 | Avg/sample: 195.3s | ETA: 0:42:19
+================================================================================
+
+Original: This film has not been seen by me in quite a few years. It came on the Disney Channel in the wee hou...
+Label: positive (confidence: 11.938)
+Replacing 40 out of 50 important words (80.0%)
+After init: This borghese atrociously not gidget kizzy by me in rote a few years. It came on the kmart Channel i...
+Pred: negative (confidence: 8.562)
+Final: This film has not been seen by me in quite a few years. It came on the Disney Channel in the wee hou...
+Final pred: negative (confidence: 10.562)
+Queries used: 880
+Attack time: 94.76s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 39 completed in 94.85s
+Success: True | Queries: 880
+Current success rate: 32/39 (82.05%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 239/250
+Elapsed: 2:05:54 | Avg/sample: 192.7s | ETA: 0:38:32
+================================================================================
+
+Original: Dresden had great expectations because of its spectacular theme and its high budget. I was really lo...
+Label: negative (confidence: 9.188)
+Replacing 120 out of 150 important words (80.0%)
+Failed to initialize adversarial example
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 40 completed in 256.69s
+Success: False | Queries: 1001
+Current success rate: 32/40 (80.00%)
+────────────────────────────────────────────────────────────────────────────────
+
+[CHECKPOINT SAVED] Progress: 40/51 samples
+
+================================================================================
+Sample 240/250
+Elapsed: 2:10:11 | Avg/sample: 194.3s | ETA: 0:35:37
+================================================================================
+
+Original: "House of Dracula" is a good sequel to "House of Frankenstein". There isn't as much action but the a...
+Label: positive (confidence: 9.875)
+Replacing 88 out of 111 important words (80.0%)
+After init: "House of Dracula" is a centering cheapest to "House of Frankenstein". There isn't as glows altieri ...
+Pred: negative (confidence: 7.906)
+Final: "House of Dracula" is a keyboard sequel to "House of Frankenstein". There isn't as much action but t...
+Final pred: negative (confidence: 8.562)
+Queries used: 1671
+Attack time: 155.81s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 41 completed in 155.91s
+Success: True | Queries: 1671
+Current success rate: 33/41 (80.49%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 241/250
+Elapsed: 2:12:46 | Avg/sample: 193.4s | ETA: 0:32:14
+================================================================================
+
+Original: I really wanted to write a title for this review that didn't come off as corny or gushing but still ...
+Label: positive (confidence: 11.188)
+Replacing 141 out of 177 important words (80.0%)
+After init: I guitarists wanted to wor a lilies for this burman that didn't come off as headland or gushing but ...
+Pred: negative (confidence: 8.938)
+Final: I really wanted to write a title for this review that didn't come off as corny or gushing but still ...
+Final pred: negative (confidence: 10.500)
+Queries used: 3092
+Attack time: 339.80s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 42 completed in 339.90s
+Success: True | Queries: 3092
+Current success rate: 34/42 (80.95%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 242/250
+Elapsed: 2:18:26 | Avg/sample: 196.9s | ETA: 0:29:32
+================================================================================
+
+Original: technically, this movie would have had it all: decent actors, a nice landscape, no obvious sights of...
+Label: negative (confidence: 8.875)
+Replacing 113 out of 142 important words (80.0%)
+Failed to initialize adversarial example
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 43 completed in 254.20s
+Success: False | Queries: 1001
+Current success rate: 34/43 (79.07%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 243/250
+Elapsed: 2:22:41 | Avg/sample: 198.2s | ETA: 0:26:25
+================================================================================
+
+Original: This was really the worst movie I've ever seen. Anyone who has seen it will know what I'm talking ab...
+Label: negative (confidence: 8.875)
+Replacing 24 out of 31 important words (80.0%)
+After init: This tints constants the aggressions movie I've ever seen. Anyone who touchin windin it will harpoon...
+Pred: positive (confidence: 8.250)
+Final: This was really the ensuring movie I've ever seen. Anyone who has seen it will know what I'm talking...
+Final pred: positive (confidence: 8.062)
+Queries used: 217
+Attack time: 20.74s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 44 completed in 20.83s
+Success: True | Queries: 217
+Current success rate: 35/44 (79.55%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 244/250
+Elapsed: 2:23:01 | Avg/sample: 194.2s | ETA: 0:22:39
+================================================================================
+
+Original: The success of SCREAM gave birth to a whole new horror flicks wave. I'm happy with that, as a big fa...
+Label: positive (confidence: 10.062)
+Replacing 48 out of 61 important words (80.0%)
+After init: The donc of surprises abolitionists bt to a whole handphone ours flicks wave. I'm sharper with that,...
+Pred: negative (confidence: 8.188)
+Final: The success of SCREAM gave birth to a whole commie horror flicks wave. I'm eucalyptus with that, as ...
+Final pred: negative (confidence: 8.562)
+Queries used: 797
+Attack time: 73.93s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 45 completed in 74.03s
+Success: True | Queries: 797
+Current success rate: 36/45 (80.00%)
+────────────────────────────────────────────────────────────────────────────────
+
+[CHECKPOINT SAVED] Progress: 45/51 samples
+
+================================================================================
+Sample 245/250
+Elapsed: 2:24:15 | Avg/sample: 191.5s | ETA: 0:19:09
+================================================================================
+
+Original: This is a title in search of a movie. It's a pitch that sounded lucrative to some studio executive a...
+Label: negative (confidence: 8.562)
+Replacing 153 out of 192 important words (80.0%)
+After init: This is a vitoria in nowthe of a movie. It's a thumbtacks that sounded lucrative to some joop predic...
+Pred: positive (confidence: 7.312)
+Final: This is a title in search of a movie. It's a pitch that sounded lucrative to some studio executive a...
+Final pred: positive (confidence: 9.688)
+Queries used: 3100
+Attack time: 330.59s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 46 completed in 330.70s
+Success: True | Queries: 3100
+Current success rate: 37/46 (80.43%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 246/250
+Elapsed: 2:29:46 | Avg/sample: 194.6s | ETA: 0:16:12
+================================================================================
+
+Original: Dolemite may not have been the first black exploitation flick to come along but it certainly is one ...
+Label: positive (confidence: 11.062)
+Replacing 45 out of 57 important words (80.0%)
+Failed to initialize adversarial example
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 47 completed in 156.22s
+Success: False | Queries: 1001
+Current success rate: 37/47 (78.72%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 247/250
+Elapsed: 2:32:22 | Avg/sample: 193.7s | ETA: 0:12:54
+================================================================================
+
+Original: When the film started I got the feeling this was going to be something special. The acting and camer...
+Label: positive (confidence: 7.594)
+Replacing 51 out of 64 important words (80.0%)
+After init: When the borghese ikon I got the feeling this scrapin going to be blume special. The jah and tm nuis...
+Pred: negative (confidence: 9.188)
+Final: When the film started I got the feeling this wont going to be something special. The acting and came...
+Final pred: negative (confidence: 10.125)
+Queries used: 1043
+Attack time: 95.72s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 48 completed in 95.81s
+Success: True | Queries: 1043
+Current success rate: 38/48 (79.17%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 248/250
+Elapsed: 2:33:58 | Avg/sample: 191.7s | ETA: 0:09:35
+================================================================================
+
+Original: Very good political thriller regarding the aftermath of terrorism and the using of political torture...
+Label: positive (confidence: 11.250)
+Replacing 71 out of 89 important words (80.0%)
+After init: hira porte mills orgy permed the aftermath of terrorism and the using of killers kimmel to sayu one'...
+Pred: negative (confidence: 8.875)
+Final: Very lapsang political thriller regarding the aftermath of terrorism and the using of grabbers tortu...
+Final pred: negative (confidence: 9.125)
+Queries used: 1146
+Attack time: 105.71s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 49 completed in 105.80s
+Success: True | Queries: 1146
+Current success rate: 39/49 (79.59%)
+────────────────────────────────────────────────────────────────────────────────
+
+================================================================================
+Sample 249/250
+Elapsed: 2:35:44 | Avg/sample: 189.9s | ETA: 0:06:19
+================================================================================
+
+Original: "Shadows" is often acclaimed as the film that was the breakthrough for American independent cinema. ...
+Label: positive (confidence: 10.500)
+Replacing 112 out of 141 important words (80.0%)
+Failed to initialize adversarial example
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 50 completed in 263.29s
+Success: False | Queries: 1001
+Current success rate: 39/50 (78.00%)
+────────────────────────────────────────────────────────────────────────────────
+
+[CHECKPOINT SAVED] Progress: 50/51 samples
+
+================================================================================
+Sample 250/250
+Elapsed: 2:40:07 | Avg/sample: 191.4s | ETA: 0:03:11
+================================================================================
+
+Original: A really terrible movie, really low-budget, with terrible acting, a convoluted and inane plot, a mod...
+Label: negative (confidence: 10.312)
+Replacing 30 out of 38 important words (80.0%)
+After init: A really patria movie, ribeiro low-budget, with patria acting, a rafa and geritol plot, a laina rewo...
+Pred: positive (confidence: 10.625)
+Final: A really patria movie, ribeiro low-budget, with patria acting, a convoluted and chill plot, a modest...
+Final pred: positive (confidence: 10.938)
+Queries used: 546
+Attack time: 55.96s
+
+────────────────────────────────────────────────────────────────────────────────
+Sample 51 completed in 56.05s
+Success: True | Queries: 546
+Current success rate: 40/51 (78.43%)
+────────────────────────────────────────────────────────────────────────────────
+
+[CHECKPOINT SAVED] Progress: 51/51 samples
+
+================================================================================
+ATTACK CAMPAIGN COMPLETED
+================================================================================
+Dataset: imdb
+Method: Logits
+Total samples: 51
+Successful attacks: 40
+Success rate: 78.43%
+================================================================================
+TIMING STATISTICS
+================================================================================
+Total time: 2:41:03
+Average time per attack: 188.76s
+Fastest attack: 13.06s
+Slowest attack: 626.16s
+================================================================================
+Results saved to: output/llm_attacks/mistral_imdb_logits_attack_200_250_200_to_250.json

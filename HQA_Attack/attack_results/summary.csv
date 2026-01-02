@@ -1,0 +1,2 @@
+dataset,n_samples,asr,avg_queries,avg_similarity,elapsed_seconds,csv_path
+yelp_polarity,1000,0.325,225.928,0.8420820769071579,5547.973103046417,./attack_results/attacks_yelp_polarity.csv
