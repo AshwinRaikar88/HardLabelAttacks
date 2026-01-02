@@ -6,11 +6,14 @@ import os
 class MistralClassifier:
     """Mistral classifier using logits-based prediction"""
 
-    def __init__(self, model_path, base_model="unsloth/mistral-7b-instruct-v0.3",
-                 max_seq_length=512, hf_token=None, device="cuda", dataset="rotten_tomatoes"):
+    def __init__(self, model_path, dataset="rotten_tomatoes",hf_token=None, device="cuda"):
         self.device = device
-        self.max_seq_length = max_seq_length
         self.dataset = dataset
+
+        if self.dataset == 'imdb':
+            self.max_seq_length = 2048
+        else:
+            self.max_seq_length = 512
 
         # Dataset-specific configurations
         self.dataset_configs = {
@@ -48,11 +51,11 @@ class MistralClassifier:
         is_adapter = os.path.exists(adapter_config_path)
 
         if is_adapter:
-            print(f"Loading base model: {base_model}")
+            print(f"Loading base model: unsloth/mistral-7b-instruct-v0.3")
             print(f"Loading LoRA adapters from: {model_path}")
             self.model, self.tokenizer = FastLanguageModel.from_pretrained(
-                model_name=base_model,
-                max_seq_length=max_seq_length,
+                model_name="unsloth/mistral-7b-instruct-v0.3",
+                max_seq_length=self.max_seq_length,
                 dtype=None,
                 load_in_4bit=True,
                 token=hf_token,
@@ -62,7 +65,7 @@ class MistralClassifier:
             print(f"Loading full model from: {model_path}")
             self.model, self.tokenizer = FastLanguageModel.from_pretrained(
                 model_name=model_path,
-                max_seq_length=max_seq_length,
+                max_seq_length=self.max_seq_length,
                 dtype=None,
                 load_in_4bit=True,
                 token=hf_token,

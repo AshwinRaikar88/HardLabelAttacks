@@ -11,26 +11,25 @@ class HQAAttack:
     """HQA-Attack using logits-based prediction for Mistral"""
 
     def __init__(self, model_path,
-                 base_model="unsloth/mistral-7b-instruct-v0.3",
+                 llm_model="mistral",
                  dataset="rotten_tomatoes",
-                 synonym_method='wordnet',
+                 synonym_method='counter-fitted',
                  embedding_path=None,
-                 max_seq_length=512,
                  hf_token=None,
                  device="cuda" if torch.cuda.is_available() else "cpu"):
         self.device = device
         self.query_count = 0
         self.dataset = dataset
 
-        # Initialize Mistral classifier with logits
-        self.classifier = MistralClassifier(
-            model_path=model_path,
-            base_model=base_model,
-            max_seq_length=max_seq_length,
-            hf_token=hf_token,
-            device=device,
-            dataset=dataset
-        )
+        if llm_model == "mistral":
+            self.classifier = MistralClassifier(
+                model_path=model_path,
+                hf_token=hf_token,
+                device=device,
+                dataset=dataset
+            )
+        else:
+            raise ValueError(f"Unknown LLM model: {llm_model}")
 
         self.label_map = self.classifier.label_map
 
@@ -41,7 +40,6 @@ class HQAAttack:
         )
 
         print(f"HQA Attack (Logits) initialized for Mistral on {dataset}")
-        print(f"Device: {device}, max_sequence length: {max_seq_length}")
 
     def get_prediction(self, text):
         """Get model prediction using logits"""

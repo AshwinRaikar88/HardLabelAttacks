@@ -25,8 +25,8 @@ except LookupError:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="HQA Attack")
+    parser.add_argument("--llm_model", type=str, default="mistral")
     parser.add_argument("--model_path", type=str, required=True, help="Path to fine-tuned model")
-    parser.add_argument("--base_model", type=str, default="unsloth/mistral-7b-instruct-v0.3")
     parser.add_argument("--dataset", type=str, default="rotten_tomatoes",
                         choices=['rotten_tomatoes', 'imdb', 'ag_news'])
     parser.add_argument("--synonym_method", type=str, default="wordnet",
@@ -145,8 +145,8 @@ if __name__ == "__main__":
 
     # Initialize attack
     attacker = HQAAttack(
+        llm_model=args.llm_model,
         model_path=args.model_path,
-        base_model=args.base_model,
         dataset=args.dataset,
         synonym_method=args.synonym_method,
         embedding_path=args.embedding_path,

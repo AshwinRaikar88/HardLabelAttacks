@@ -1,5 +1,5 @@
 import numpy as np
-from embedding_loader import EmbeddingLoader
+from utils.embedding_loader import EmbeddingLoader
 from nltk.corpus import wordnet
 
 class SynonymExtractor:
