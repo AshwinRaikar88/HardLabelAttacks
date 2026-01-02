@@ -311,9 +311,74 @@ class HQAAttack:
         
         return adversarial_text
     
-    def initialize_adversarial(self, text, original_label, max_attempts=1000):
+    # def initialize_adversarial(self, text, original_label, max_attempts=1000):
+    #     """
+    #     Random initialization: change important words until adversarial
+    #     """
+    #     words = text.split()
+    #     important = self.get_important_words(text)
+        
+    #     if not important:
+    #         important = [(w, 'NOUN') for w in words if len(w) > 2]
+        
+    #     if not important or len(important) < 1:
+    #         print(f"WARNING: No important words found in text: {text[:100]}")
+    #         return None
+        
+    #     for attempt in range(max_attempts):
+    #         test_words = words.copy()
+            
+    #         # Fix: Ensure we have at least 1 important word and valid range
+    #         max_replacements = min(6, len(important) + 1)
+    #         min_replacements = min(1, len(important))  # Start from 1, not 2
+            
+    #         # Handle edge case where we only have 1 important word
+    #         if max_replacements <= min_replacements:
+    #             num_replacements = 1
+    #         else:
+    #             # num_replacements = np.random.randint(min_replacements, max_replacements)
+    #             num_replacements = len(important)
+            
+    #         if len(important) > 0:
+    #             selected_important = np.random.choice(len(important), 
+    #                                                 min(num_replacements, len(important)), 
+    #                                                 replace=False)
+    #         else:
+    #             continue
+            
+    #         replaced_count = 0
+    #         for idx in selected_important:
+    #             word, _ = important[idx]
+    #             synonyms = self.get_synonyms(word, top_k=50)
+                
+    #             if synonyms:
+    #                 word_positions = [i for i, w in enumerate(test_words) if w.lower() == word.lower()]
+    #                 if word_positions:
+    #                     replacement = np.random.choice(synonyms)
+    #                     pos = np.random.choice(word_positions)
+    #                     test_words[pos] = replacement
+    #                     replaced_count += 1
+            
+    #         if replaced_count == 0:
+    #             continue
+            
+    #         test_text = ' '.join(test_words)
+    #         pred_label, pred_score = self.get_prediction(test_text)
+            
+    #         if pred_label != original_label:
+    #             return test_text
+        
+    #     return None
+
+    def initialize_adversarial(self, text, original_label, replacement_pct=0.5, max_attempts=1000):
         """
-        Random initialization: change important words until adversarial
+        Initialization: replace n% of important words until adversarial
+        
+        Args:
+            text: Input text
+            original_label: Original prediction label
+            replacement_pct: Percentage of important words to replace (0.0 to 1.0)
+            max_attempts: Maximum number of attempts
         """
         words = text.split()
         important = self.get_important_words(text)
@@ -325,25 +390,17 @@ class HQAAttack:
             print(f"WARNING: No important words found in text: {text[:100]}")
             return None
         
+        # Calculate number of words to replace based on percentage
+        num_replacements = max(1, int(len(important) * replacement_pct))
+        print(f"Replacing {num_replacements} out of {len(important)} important words ({replacement_pct*100}%)")
+        
         for attempt in range(max_attempts):
             test_words = words.copy()
             
-            # Fix: Ensure we have at least 1 important word and valid range
-            max_replacements = min(6, len(important) + 1)
-            min_replacements = min(1, len(important))  # Start from 1, not 2
-            
-            # Handle edge case where we only have 1 important word
-            if max_replacements <= min_replacements:
-                num_replacements = 1
-            else:
-                num_replacements = np.random.randint(min_replacements, max_replacements)
-            
-            if len(important) > 0:
-                selected_important = np.random.choice(len(important), 
-                                                    min(num_replacements, len(important)), 
-                                                    replace=False)
-            else:
-                continue
+            # Randomly select n% of important words
+            selected_important = np.random.choice(len(important), 
+                                                num_replacements, 
+                                                replace=False)
             
             replaced_count = 0
             for idx in selected_important:
@@ -384,7 +441,7 @@ class HQAAttack:
             label_name = self.label_map.get(original_label, f"Label_{original_label}")
             print(f"Label: {label_name} (confidence: {original_score:.3f})")
         
-        adversarial = self.initialize_adversarial(text, original_label)
+        adversarial = self.initialize_adversarial(text, original_label, 0.8)
         if adversarial is None:
             if verbose:
                 print("Failed to initialize adversarial example")

@@ -1,0 +1,2 @@
+dataset,n_samples,asr,avg_queries,avg_similarity,elapsed_seconds,csv_path
+rotten_tomatoes,1000,0.531,41.126,0.8109556268453598,648.6937971115112,./attack_results/attacks_rotten_tomatoes.csv

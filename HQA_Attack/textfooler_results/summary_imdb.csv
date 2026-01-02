@@ -1,0 +1,2 @@
+dataset,n_samples,asr,avg_queries,avg_queries_successful,avg_similarity,elapsed_seconds,csv_path
+imdb,1000,0.389,657.479,363.29562982005143,0.837802672624588,5287.349249124527,./textfooler_results/textfooler_imdb.csv

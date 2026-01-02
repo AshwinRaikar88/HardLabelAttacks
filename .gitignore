@@ -176,3 +176,8 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 hf_token.txt
+/unsloth_compiled_cache
+/HQA_Attack/unsloth_compiled_cache
+/.idea
+/.vscode
+god_mode_token.txt
