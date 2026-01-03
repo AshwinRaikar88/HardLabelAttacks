@@ -25,7 +25,7 @@ except LookupError:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="HQA Attack")
-    parser.add_argument("--llm_model", type=str, default="mistral", choices=['mistral, qwen3'])
+    parser.add_argument("--llm_model", type=str, default="mistral", choices=['mistral', 'qwen3'])
     parser.add_argument("--model_path", type=str, required=True, help="Path to fine-tuned model")
     parser.add_argument("--dataset", type=str, default="rotten_tomatoes",
                         choices=['rotten_tomatoes', 'imdb', 'ag_news'])
