@@ -1,5 +1,0 @@
-Generating train split:   0%|          | 0/8530 [00:00<?, ? examples/s]Generating train split:  12%|█▏        | 1000/8530 [00:01<00:13, 545.07 examples/s]Generating train split: 100%|██████████| 8530/8530 [00:01<00:00, 4590.06 examples/s]
-Generating validation split:   0%|          | 0/1066 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 1066/1066 [00:00<00:00, 370463.84 examples/s]
-Generating test split:   0%|          | 0/1066 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1066/1066 [00:00<00:00, 450900.37 examples/s]
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:09<00:09,  9.92s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:14<00:00,  6.85s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:14<00:00,  7.31s/it]
-slurmstepd: error: *** JOB 10141834 ON gilbreth-k021 CANCELLED AT 2026-01-02T11:23:41 DUE TO TIME LIMIT ***

@@ -1,4 +1,0 @@
-Generating train split:   0%|          | 0/8530 [00:00<?, ? examples/s]Generating train split:  12%|█▏        | 1000/8530 [00:02<00:16, 462.93 examples/s]Generating train split: 100%|██████████| 8530/8530 [00:02<00:00, 3913.37 examples/s]
-Generating validation split:   0%|          | 0/1066 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 1066/1066 [00:00<00:00, 429750.87 examples/s]
-Generating test split:   0%|          | 0/1066 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1066/1066 [00:00<00:00, 473987.92 examples/s]
-slurmstepd: error: *** JOB 10036585 ON gilbreth-k006 CANCELLED AT 2025-12-04T17:22:33 DUE TO TIME LIMIT ***
