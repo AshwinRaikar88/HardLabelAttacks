@@ -1,0 +1,2 @@
+dataset,n_samples,asr,avg_queries,avg_queries_successful,avg_similarity,elapsed_seconds,csv_path
+yelp_polarity,1000,0.261,516.706,267.9272030651341,0.8197428380250931,4437.528022766113,./textfooler_results/textfooler_yelp_polarity.csv
